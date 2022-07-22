@@ -1,2 +1,5 @@
 export * from "./as-decimal"
+export * from "./decimal-like"
+export * from "./format-number"
+export * from "./human-number"
 export * from "./is-decimal"
