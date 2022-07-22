@@ -1,0 +1,36 @@
+{
+  "name": "decimal-fns",
+  "version": "1.0.0",
+  "description": "Functions to make working with Decimal.js more enjoyable",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m2-labs/decimal-fns.git"
+  },
+  "author": {
+    "name": "M2 Labs",
+    "url": "https://m2.xyz"
+  },
+  "contributors": [
+    {
+      "name": "Brice Stacey",
+      "email": "brice@m2.xyz"
+    },
+    {
+      "name": "Matt Venables",
+      "email": "matt@m2.xyz"
+    }
+  ],
+  "files": [
+    "dist"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m2-labs/decimal-fns/issues"
+  },
+  "homepage": "https://github.com/m2-labs/decimal-fns#readme"
+}
