@@ -1,0 +1,19 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    name: "Lint, Type Check, and Test"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm install
+      - run: npm run lint
+      - run: npm run type-check
+      - run: npm run test
