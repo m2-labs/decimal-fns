@@ -17,7 +17,7 @@ test("humanNumber formats a billion", () => {
 })
 
 test("humanNumber formats a billion to 2 decimal places", () => {
-  expect(humanNumber("1234560000")).toBe("1.23B")
+  expect(humanNumber("1234567890")).toBe("1.23B")
 })
 
 test("humanNumber formats a billion with full words", () => {
