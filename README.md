@@ -11,11 +11,12 @@ npm i decimal-fns
 ## Usage
 
 ```ts
+
 ```
 
 ## Methods
 
-*
+-
 
 ## Brought to you by M2 Labs
 
