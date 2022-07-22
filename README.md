@@ -5,8 +5,10 @@ Useful functions to make working with Decimal.js more enjoyable
 ## Installation
 
 ```sh
-npm i decimal-fns
+npm i decimal-fns decimal.js
 ```
+
+NOTE: This package relies on [Decimal.js](https://mikemcl.github.io/decimal.js/) as a Peer Dependency and does not bundle it as part of this repository.
 
 ## Usage
 
