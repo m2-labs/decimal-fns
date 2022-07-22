@@ -11,12 +11,19 @@ npm i decimal-fns
 ## Usage
 
 ```ts
+import { asDecimal } from 'decimal-fns'
 
+const number = 5
+const decimal = asDecimal(5)
+
+const biggerDecimal = decimal.plus("200") // 205
 ```
 
-## Methods
+## Exported Methods
 
--
+### `asDecimal(number, [fallback])`
+
+Converts a Decimal-Like param (string, number, Decimal) and attempts to convert it to the Decimal type. If the conversion fails (e.g. NaN is provided), it will attempt to return the fallback parameter as a Decimal. If no fallback is provided, or if the fallback can not be converted to a Decimal (e.g. NaN is provided), then the method will throw.
 
 ## Brought to you by M2 Labs
 
