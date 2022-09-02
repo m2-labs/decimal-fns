@@ -17,20 +17,24 @@ test("asDecimal returns the fallback on error", () => {
   expect(asDecimal("not a number", 100).eq(new Decimal(100))).toBe(true)
 })
 
+test("asDecimal returns the fallback if given no primary value", () => {
+  expect(asDecimal(undefined, 100).eq(new Decimal(100))).toBe(true)
+})
+
 test("asDecimal throws on error if the fallback is invalid", () => {
   expect(() => {
     asDecimal("not a number", "also not a number")
-  }).toThrow()
+  }).toThrow("[DecimalError] Invalid argument: also not a number")
 })
 
-test("asDecimal throws on error if no fallback is given", () => {
+test("asDecimal throws on error if an invalid number and no fallback is given", () => {
   expect(() => {
     asDecimal("not a number")
-  }).toThrow()
+  }).toThrow("[DecimalError] Invalid argument: not a number")
 })
 
 test("asDecimal throws if given no arguments", () => {
   expect(() => {
     asDecimal()
-  }).toThrow()
+  }).toThrow("[DecimalError] Invalid argument: undefined")
 })

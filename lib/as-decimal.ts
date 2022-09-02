@@ -18,6 +18,10 @@ export const asDecimal = (
   fallback?: DecimalLike
 ): Decimal => {
   if (value === null || value === undefined) {
+    if (fallback === null || fallback === undefined) {
+      throw new Error(`[DecimalError] Invalid argument: ${value}`)
+    }
+
     return asDecimal(fallback)
   }
 
