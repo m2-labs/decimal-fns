@@ -1,3 +1,4 @@
+import BigNumber from "bignumber.js"
 import Decimal from "decimal.js"
 import { asDecimal } from "../lib/as-decimal"
 
@@ -11,6 +12,11 @@ test("asDecimal returns a Decimal from a string", () => {
 
 test("asDecimal returns a Decimal from a number", () => {
   expect(asDecimal(new Decimal(420)).eq(new Decimal(420))).toBe(true)
+})
+
+test("asDecimal returns a Decimal from a BigNumber", () => {
+  const bigNumber = new BigNumber(1.234)
+  expect(asDecimal(bigNumber).eq(new Decimal(1.234))).toBe(true)
 })
 
 test("asDecimal returns the fallback on error", () => {

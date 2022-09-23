@@ -26,7 +26,7 @@ export const asDecimal = (
   }
 
   try {
-    const decimal = new Decimal(value)
+    const decimal = tryDecimalAndString(value)
     return decimal
   } catch (e) {
     if (fallback !== undefined && fallback !== null) {
@@ -34,5 +34,21 @@ export const asDecimal = (
     }
 
     throw e
+  }
+}
+
+/**
+ * Attempt to build a new Decimal object from the given value, or
+ * fall back to building a Decimal from the values `toString()`
+ * result.
+ * @param value the number to convert to a Decimal
+ * @returns a Decimal
+ */
+const tryDecimalAndString = (value: DecimalLike): Decimal => {
+  try {
+    const decimal = new Decimal(value as Decimal.Value)
+    return decimal
+  } catch (e) {
+    return new Decimal(value.toString())
   }
 }
